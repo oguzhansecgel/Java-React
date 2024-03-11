@@ -1,5 +1,6 @@
 package com.oguzhansecgel.javareact.entites.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,9 +13,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "categories")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","products"})
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "category_id")
     private int categoryId;
 
